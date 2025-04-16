@@ -58,9 +58,9 @@ export const Contact: FC = () => {
     const formSubmit = contactForm.handleSubmit(async (values) => {
         axios
             .post("https://api.emailjs.com/api/v1.0/email/send", {
-                service_id: "service_YOUR_ID",
-                template_id: "template_YOur_ID",
-                user_id: "your_user_id",
+                service_id: "service_1r5ot0q",
+                template_id: "template_g7uyjgz",
+                user_id: "GxXnz-tyDQeFi0sDZ",
                 template_params: {
                     name: values.name,
                     email: values.email,
@@ -135,7 +135,7 @@ export const Contact: FC = () => {
                         <TextBox
                             bgText="Email"
                             boxAsLink={true}
-                            href="mailto:youremgail@gmail.com"
+                            href="mailto:info@setupandsmile.com"
                             target="_blank"
                             children={`
                             <h3>Click to send email</h3>

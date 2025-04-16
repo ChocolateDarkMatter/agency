@@ -6,8 +6,13 @@ import IconTwitter from "./icon-twitter.svg";
 import IconLinkedIn from "./icon-linkedin.svg";
 import IconArrowDown from "./icon-arrow-down.svg";
 import IconArrowCircle from "./icon-arrow-circle.svg";
-
-import IconAstro from "./icon-astro.svg";
+import IconCater from "./icon-cater.svg";
+import IconChair from "./icon-chair.svg";
+import IconTent from "./icon-tent.svg";
+import IconTable from "./icon-table.svg";
+import IconBalloonArch from "./icon-balloonarch.svg";
+import IconLinen from "./icon-linen.svg";
+import IconThemeDecor from "./icon-themedecor.svg";
 
 export const icons = {
     arrowDown: IconArrowDown,
@@ -16,7 +21,13 @@ export const icons = {
     instagram: IconInstagram,
     twitter: IconTwitter,
     linkedin: IconLinkedIn,
-    astro: IconAstro,
+    chair: IconChair,
+    tent: IconTent,
+    table: IconTable,
+    balloonArch: IconBalloonArch,
+    linen: IconLinen,
+    themeDecor: IconThemeDecor,
+    cater: IconCater,
 };
 
 type IconName = {
@@ -45,4 +56,12 @@ export const Icon: FC<IconName> = ({ alt, iconData, ...rest }) => {
     );
 };
 
-export { IconAstro };
+export { 
+    IconCater,
+    IconChair,
+    IconTent,
+    IconTable,
+    IconBalloonArch,
+    IconLinen,
+    IconThemeDecor
+};

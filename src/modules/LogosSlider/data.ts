@@ -1,99 +1,100 @@
-import { IconAstro } from "@static/icons";
+import {IconCater, IconChair, IconTent, IconTable, IconBalloonArch, IconLinen, IconThemeDecor } from "@static/icons";
+
 export const LogosSliderData = [
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconChair,
+        alt: "Chair",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconTent,
+        alt: "Tent",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconTable,
+        alt: "Table",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconBalloonArch,
+        alt: "Balloon Arch",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconLinen,
+        alt: "Linen",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconThemeDecor,
+        alt: "Theme Decor",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconCater,
+        alt: "Cater",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconChair,
+        alt: "Chair",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconTent,
+        alt: "Tent",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconTable,
+        alt: "Table",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconBalloonArch,
+        alt: "Balloon Arch",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconLinen,
+        alt: "Linen",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconThemeDecor,
+        alt: "Theme Decor",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconCater,
+        alt: "Cater",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconChair,
+        alt: "Chair",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconTent,
+        alt: "Tent",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconTable,
+        alt: "Table",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconBalloonArch,
+        alt: "Balloon Arch",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconLinen,
+        alt: "Linen",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconThemeDecor,
+        alt: "Theme Decor",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconCater,
+        alt: "Cater",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconChair,
+        alt: "Chair",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconTent,
+        alt: "Tent",
     },
     {
-        logo: IconAstro,
-        alt: "astro.build",
+        logo: IconTable,
+        alt: "Table",
     },
 ];

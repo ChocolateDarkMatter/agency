@@ -3,12 +3,12 @@ import react from "@astrojs/react";
 import CompressionPlugin from "vite-plugin-compression";
 import sitemap from "@astrojs/sitemap";
 
-export const siteUrl = "https://agency-aestro-astro.netlify.app";
+export const siteUrl = "https://setupandsmile.com";
 
 const date = new Date().toISOString();
 // https://astro.build/config
 export default defineConfig({
-    site: siteUrl + "/",
+    site: siteUrl,
 
     integrations: [
         react(),
