@@ -7,7 +7,7 @@ import { Container } from "@components/Container";
 import { Hero } from "@modules/Hero";
 ---
 
-<Layout title="Agency Aestro" description="YOUR META DESCRIPTION FOR SEO">
+<Layout title="Houston's Premier Event Rental Company | Agency Aestro" description="Houston's trusted source for elegant event rentals. From weddings to corporate events, we provide premium tables, chairs, tents, and more. Stress-free rental experience guaranteed.">
     <main class="page-content">
         <ContentSection
             style={{
@@ -16,11 +16,9 @@ import { Hero } from "@modules/Hero";
             }}
         >
             <FadeIn client:visible>
-                <h1>About us</h1>
+                <h1>Your Trusted Partner in Houston Event Rentals</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam ultricies, nunc nec vehicula ultricies, nunc nec
-                    vehicula ultricies, nunc nec vehicula
+                    At Setup & Smile, we transform ordinary spaces into extraordinary event venues. As Houston's premier event rental company, we specialize in providing elegant, reliable solutions for weddings, corporate events, galas, and private celebrations. Our commitment to excellence and attention to detail ensures your event will be nothing short of spectacular.
                 </p>
             </FadeIn>
         </ContentSection>
@@ -29,11 +27,11 @@ import { Hero } from "@modules/Hero";
             client:load
             content={{
                 switchPlaces: true,
-                title: `About us`,
-                paragraph: `lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores `,
+                title: `Premium Event Rentals in Houston`,
+                paragraph: `From elegant wedding receptions to sophisticated corporate gatherings, our extensive inventory of premium event rentals includes everything you need. Choose from our selection of high-quality tables, chairs, tents, linens, and decor items, all maintained to the highest standards. Our team handles delivery, setup, and breakdown, ensuring a seamless experience from start to finish.`,
                 image: {
-                    src: "https://picsum.photos/630/400?random=2",
-                    alt: "hero section image",
+                    src: "/src/static/images/balloonrainbow.webp",
+                    alt: "Elegant event setup with premium rentals",
                     width: 300,
                     height: 300,
                 },
@@ -44,11 +42,11 @@ import { Hero } from "@modules/Hero";
             heroType="textImage"
             client:load
             content={{
-                title: `About us more`,
-                paragraph: `lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores `,
+                title: `Why Choose Setup & Smile?`,
+                paragraph: `With years of experience serving the Houston area, we understand what it takes to create memorable events. Our local expertise, combined with our commitment to customer service, makes us the preferred choice for event planners and hosts alike. We offer flexible rental packages, competitive pricing, and personalized service to meet your specific needs.`,
                 image: {
-                    src: "https://picsum.photos/630/400?random=3",
-                    alt: "hero section image",
+                    src: "/src/static/images/king.webp",
+                    alt: "Professional event setup team",
                     width: 300,
                     height: 300,
                 },
@@ -56,7 +54,7 @@ import { Hero } from "@modules/Hero";
         />
         <Container>
             <FadeIn client:visible>
-                <h2>Check our profiles!</h2>
+                <h2>Connect With Us</h2>
             </FadeIn>
         </Container>
         <BoxOffers

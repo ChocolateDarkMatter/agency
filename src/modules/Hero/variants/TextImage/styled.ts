@@ -32,34 +32,17 @@ export const TextImageStyled = styled.div<{
 export const TextImageFigure = styled.figure`
     width: 100%;
     position: relative;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        height: 100%;
-        border-radius: 100%;
-        background: linear-gradient(
-            0deg,
-            ${Theme.tertiary} 100%,
-            ${Theme.primary} 0%
-        );
-
-        filter: blur(50px);
-        opacity: 0.3;
-        z-index: -1;
-    }
 `;
 
 export const TextImage = styled(Image)`
     width: 100%;
     margin-bottom: 30px;
     min-height: 450px;
-
     object-fit: contain;
+    border-radius: 50%;
+    overflow: hidden;
+    aspect-ratio: 1;
+    padding: 20px;
 
     ${MediaQuery.max("lg")} {
         min-height: auto;

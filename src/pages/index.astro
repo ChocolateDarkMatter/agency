@@ -9,35 +9,38 @@ import { ContentSection } from "@modules/ContentSection";
 import { FadeIn } from "@utils/animations/FadeIn";
 ---
 
-<Layout title="Agency Aestro" description="YOUR META DESCRIPTION FOR SEO">
+<Layout 
+    title="Houston Event Rentals | Wedding & Corporate Event Rental Services" 
+    description="Houston's premier source for wedding, corporate, and special event rentals. Quality tables, chairs, tents, and decor for any occasion. Serving Greater Houston with reliable party rental services."
+>
     <main class="page-content">
         <Hero
             heroType="textImage"
             client:load
             content={{
-                title: `Agency Aestro - We are for you!`,
-                paragraph: `We will help grow your business lorem ipsum dolores quis nostru`,
+                title: "Houston's Premier Event Rental Partner",
+                paragraph: "Transform your vision into reality with Houston's most trusted source for elegant wedding, corporate, and special event rentals. From intimate gatherings to grand galas, we deliver excellence to every celebration.",
                 buttons: [
                     {
-                        link: "https://codexcode.store/themes/agency-aestro-template-page",
-                        text: "buy template - $14.99",
+                        link: "",
+                        text: "View Rental Options",
                         variant: "secondary",
                     },
                     {
-                        link: "https://codexcode.store/contact",
+                        link: "",
                         text: "contact us",
                         variant: "primary",
                     },
                 ],
                 image: {
-                    srcLocal: "heroImg",
-                    alt: "hero section image",
+                    src: "/src/static/images/wbp-2.JPG",
+                    alt: "Elegant wedding setup with round tables and chairs",
                     width: 300,
                     height: 300,
                 },
             }}
         />
-        <LogosSlider client:load />
+        <!-- <LogosSlider client:load /> -->
         <ContentSection
             style={{
                 maxWidth: "600px",
@@ -45,12 +48,9 @@ import { FadeIn } from "@utils/animations/FadeIn";
             }}
         >
             <FadeIn client:visible>
-                <h2>Why choose us?</h2>
+                <h2>Why Choose Our Houston Event Rental Services?</h2>
                 <p>
-                    lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco
+                    We understand that every event is unique, and that's why we go above and beyond to ensure your vision becomes reality. Our commitment to excellence, attention to detail, and dedication to customer satisfaction sets us apart in the Houston event rental industry.
                 </p>
             </FadeIn>
         </ContentSection>
@@ -59,55 +59,55 @@ import { FadeIn } from "@utils/animations/FadeIn";
             boxes={[
                 {
                     content: `
-                    <h2>+940 clients</h2>
-                    <p>lorem ipsum dolor sit amet, conse dolor sit amet, conse</p>
+                    <h2>1,000+ Successful Events</h2>
+                    <p>From intimate weddings to large-scale corporate functions, we've helped create memorable experiences for countless clients across Houston and surrounding areas.</p>
                 `,
                 },
                 {
                     content: `
-                    <h2>+1000 projects</h2>
-                    <p>lorem ipsum dolor sit amet, conse dolor sit amet, conse lorem ipsum dolor sit amet, conse dolor sit amet, conse</p>
+                    <h2>Premium Inventory</h2>
+                    <p>Our extensive collection of high-quality rentals includes everything from elegant tables and chairs to sophisticated tents and decor, all maintained to the highest standards.</p>
                 `,
                 },
                 {
                     content: `
-                    <h2>10 years experience</h2>
-                    <p>lorem ipsum dolor sit amet, conse dolor sit amet, conse</p>
+                    <h2>Expert Team</h2>
+                    <p>With over a decade of experience in the Houston event industry, our professional team handles everything from planning to setup, ensuring a seamless experience.</p>
                 `,
                 },
             ]}
         />
         <LeadTexts
             client:load
-            title="We offer"
+            title="Our Services"
             contentText={[
                 {
                     content: `
                 <h3>
-                    <b>lorem ipsum dolor sit ame</b> - lorem ipsum dolor sit ame lorem ipsum dolor sit ame
+                    <b>Wedding Rentals</b> - Create your dream wedding with our extensive collection of elegant chairs, tables, linens, and decor. Serving Houston couples with distinction for over a decade.
                 </h3>
-            `,
+            `
                 },
                 {
                     content: `
                 <h3>
-                 <b>lorem ipsum dolor sit ame</b> - lorem ipsum dolor sit m dolor sitm dolor sit ame lorem ipsum dolor sit ame
+                    <b>Corporate Events</b> - Elevate your business gatherings with professional-grade equipment and furnishings. From conferences to company celebrations, we ensure flawless execution.
                 </h3>
-            `,
+            `
                 },
                 {
                     content: `
                 <h3>
-                    <b>lorem ipsum dolor sit ame</b> - lorem ipsum dolor sit m dolor sitm dolor
+                    <b>Social Celebrations</b> - Whether it's a milestone birthday, graduation, or gala, our premium rental inventory helps you host memorable events that impress your guests.
                 </h3>
-            `,
+            `
                 },
                 {
                     content: `
                 <h3>
-                    <b>lorem ipsum dolor sit ame</b> - lorem ipsum dolor sit m dolor sitm dolor
+                    <b>Tent & Structure Rentals</b> - Transform any outdoor space into an elegant venue with our selection of premium tents, lighting, and climate control solutions.
                 </h3>
-            `,
+            `
                 },
             ]}
         />
@@ -116,11 +116,11 @@ import { FadeIn } from "@utils/animations/FadeIn";
             client:load
             content={{
                 switchPlaces: true,
-                title: `Our Agency help with lorem`,
-                paragraph: `lorem ipsum dolor sit amet, conse dolor sit amet, conse`,
+                title: "Complete Event Solutions",
+                paragraph: "Our extensive inventory features everything you need for a successful event: premium tables and chairs, elegant place settings, sophisticated lighting, climate-controlled tents, and much more. Every piece is meticulously maintained to meet our exacting standards of quality and style.",
                 image: {
-                    srcLocal: "heroImg",
-                    alt: "hero section image",
+                    src: "/src/static/images/IMG_5673.webp",
+                    alt: "Elegant table setting with fine china and centerpieces",
                     width: 300,
                     height: 300,
                 },
@@ -129,13 +129,35 @@ import { FadeIn } from "@utils/animations/FadeIn";
         <ContentSection>
             <FadeIn client:load>
                 <h2>
-                    lorem ipsum dolor sit amet<br /> consectetur adipiscing elit.
-                    Sed
+                    Excellence in Every Detail<br />Your Vision, Our Expertise
                 </h2>
 
                 <figure>
-                    <Image srcLocal="chart" alt="speed chart" />
+                    <Image src="/src/static/images/wbp-2.webp" alt="Elegant event setup showcasing our premium rental inventory" />
                 </figure>
+            </FadeIn>
+        </ContentSection>
+        <ContentSection
+            style={{
+                maxWidth: "600px",
+                margin: "0 auto",
+            }}
+        >
+            <FadeIn client:visible>
+                <h2>Why Choose Houston's Most Trusted Event Rental Partner?</h2>
+                <p>
+                    For over a decade, we've been Houston's go-to source for premium event rentals. Our commitment to quality, reliability, and exceptional service has made us the preferred choice for:
+                </p>
+                <ul>
+                    • Luxury Weddings & Ceremonies
+                    • Corporate Gatherings & Conferences
+                    • Charitable Galas & Fundraisers
+                    • Private Celebrations & Parties
+                    • Outdoor Events & Festivals
+                </ul>
+                <p>
+                    From the initial consultation to final pickup, our experienced team ensures a seamless rental experience that lets you focus on what matters most – creating unforgettable moments.
+                </p>
             </FadeIn>
         </ContentSection>
     </main>

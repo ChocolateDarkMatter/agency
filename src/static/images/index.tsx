@@ -2,7 +2,7 @@ import { type FC } from "react";
 import HeroImg from "./hero-img.webp";
 import Chart from "./chart.webp";
 import Logo from "./logo.webp";
-import PreviewPng from "./preview.webp";
+import PreviewPng from "./preview2.jpg";
 
 export const images = {
     preview: PreviewPng,

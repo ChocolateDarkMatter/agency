@@ -18,7 +18,7 @@ export const Navigation: FC = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="/about">About Agency</a>
+                        <a href="/about">About Us</a>
                     </li>
                     <li>
                         <a href="/contact">Contact</a>
