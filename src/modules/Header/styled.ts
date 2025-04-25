@@ -19,7 +19,7 @@ export const HeaderStyled = styled.header`
 
     background: ${Theme.bgElement};
 
-    padding: 20px 0;
+    padding: 2px 0;
 
     display: flex;
 
