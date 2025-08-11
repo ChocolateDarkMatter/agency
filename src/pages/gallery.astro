@@ -1,0 +1,161 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import { Hero } from "@modules/Hero";
+import { Button } from "@components/Button";
+import { Container } from "@components/Container";
+import { FadeIn } from "@utils/animations/FadeIn";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../../public/images/*.{jpg,jpeg,png,webp}",
+);
+---
+
+<Layout
+    title="Gallery | Setup & Smile - Houston Event Rentals"
+    description="View our gallery of successful events and premium rental inventory. See how Setup & Smile transforms Houston weddings, corporate events, and celebrations."
+>
+    <main class="page-content">
+        <Hero heroType="center" client:load>
+            <FadeIn delay={0.2} client:load>
+                <h1>Our Gallery</h1>
+                <p>Explore our collection of successful events and premium rental inventory</p>
+            </FadeIn>
+        </Hero>
+        
+        <Container>
+            <div class="gallery-navigation">
+                <Button variant="secondary" link="/">
+                    ← Back to Home
+                </Button>
+                <Button variant="primary" link="/contact">
+                    Contact Us →
+                </Button>
+            </div>
+        </Container>
+
+        <section class="justified-gallery" id="photoswipe">
+            {
+                Object.entries(images).map(async ([_path, image], index) => {
+                    const { default: imageData } = await image();
+                    return (
+                        <a
+                            style={`--width: ${imageData.width}; --height: ${imageData.height};`}
+                            href={imageData.src}
+                            target="_blank"
+                            data-fancybox="gallery"
+                        >
+                            <Image
+                                format="webp"
+                                src={imageData}
+                                alt="Event rental showcase"
+                                height={400}
+                                loading={index < 20 ? "eager" : "lazy"}
+                            />
+                        </a>
+                    );
+                })
+            }
+        </section>
+    </main>
+</Layout>
+
+<script>
+    import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
+
+    Fancybox.bind("[data-fancybox]", {
+        theme: "auto",
+        mainStyle: {
+            "--f-button-width": "44px",
+            "--f-button-height": "44px",
+            "--f-button-border-radius": "50%",
+            "--f-toolbar-padding": "16px",
+        },
+        Carousel: {
+            Arrows: false,
+            Toolbar: {
+                display: {
+                    left: [],
+                    middle: [],
+                    right: ["close"],
+                },
+            },
+            transition: "slide",
+        },
+    });
+</script>
+
+<style>
+    .gallery-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 0;
+        gap: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .gallery-navigation {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .gallery-navigation > * {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .justified-gallery {
+        --padding: max(2.5vw, 12px);
+        --space: max(2.5vw, 12px);
+        --min-height: clamp(200px, 20vw, 400px);
+
+        padding: var(--padding);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space);
+
+        a {
+            flex-grow: calc(var(--width) * (100000 / var(--height)));
+            flex-basis: calc(var(--min-height) * (var(--width) / var(--height)));
+            aspect-ratio: var(--width) / var(--height);
+            overflow: hidden;
+            opacity: 1;
+            transition: all 0.05s ease-in-out;
+            cursor: pointer;
+        }
+
+        a img {
+            display: block;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        a:hover img {
+            transform: scale(1.05);
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--primary-color, #007bff);
+            outline-offset: 2px;
+            transform: scale(1.05);
+            z-index: 1;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        a.hidden {
+            transition: opacity 0.4s ease-in-out;
+            opacity: 0;
+        }
+
+        &::after {
+            content: " ";
+            flex-grow: 1000000000;
+        }
+    }
+</style>

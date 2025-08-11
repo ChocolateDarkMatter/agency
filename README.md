@@ -18,6 +18,22 @@ There are 3 folders
 
 -   icons - Right now we don't have solution to import SVGA files into React with Astro, so its working the same as Images
 
+## 🖼️ Gallery Feature
+
+The site includes a complete photo gallery implementation with the following features:
+
+-   **Responsive justified grid layout** - Images automatically arrange in a Pinterest-style justified layout
+-   **Fancybox lightbox integration** - Click any image to view in fullscreen with smooth transitions
+-   **Navigation elements** - Direct links to Home and Contact pages from gallery
+-   **Mobile-friendly design** - Fully responsive across all device sizes
+-   **Performance optimized** - Images load with lazy loading and WebP format conversion
+
+### Gallery Dependencies
+-   `@fancyapps/ui` - Provides lightbox functionality for image viewing
+
+### Gallery Usage
+Visit `/gallery` to view the photo gallery. The gallery automatically displays all images from the `public/images/` directory.
+
 #### 🖼️ Images
 
 Images can be stored in static/images and use it with srcLocal (typescript will give you types),
