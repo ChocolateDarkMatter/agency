@@ -29,7 +29,7 @@ export const NavigationListWrapper = styled.nav<{
         height: 100vh;
         z-index: 2;
         transform: translateX(100%);
-        transition: transform 0.3s linear, right 0.7s;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         padding-top: 85px;
 
         width: clamp(300px, 80%, 300px);
@@ -79,15 +79,24 @@ export const NavigationList = styled.ul`
         border-radius: 5px;
         background-color: transparent;
         cursor: pointer;
-        transition: background-color 0.2s linear;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        transform: translateY(0);
 
         ${MediaQuery.max("lg")} {
-            padding: 10px 20px;
+            padding: 15px 20px;
+            width: 100%;
+            min-height: 44px;
         }
 
         &:hover {
             background-color: ${Theme.tertiary};
             color: ${Theme.primary};
+            transform: translateY(-1px);
+            
+            ${MediaQuery.min("lg")} {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
         }
 
         &.active:not(:hover) {

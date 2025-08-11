@@ -14,11 +14,24 @@ export const ButtonLink = styled.a<{
     $variant: "primary" | "secondary";
 }>`
     text-transform: uppercase;
-    transition: 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
 
     ${({ $variant }) => $variant === "primary" && PrimaryVariant};
     ${({ $variant }) => $variant === "secondary" && SecondaryVariant};

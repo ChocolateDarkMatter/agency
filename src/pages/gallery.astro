@@ -41,7 +41,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                     const { default: imageData } = await image();
                     return (
                         <a
-                            style={`--width: ${imageData.width}; --height: ${imageData.height};`}
+                            style={`--width: ${imageData.width}; --height: ${imageData.height}; --index: ${index};`}
                             href={imageData.src}
                             target="_blank"
                             data-fancybox="gallery"
@@ -51,7 +51,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                                 src={imageData}
                                 alt="Event rental showcase"
                                 height={400}
-                                loading={index < 20 ? "eager" : "lazy"}
+                                loading={index < 12 ? "eager" : "lazy"}
                             />
                         </a>
                     );
@@ -122,9 +122,15 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
             flex-basis: calc(var(--min-height) * (var(--width) / var(--height)));
             aspect-ratio: var(--width) / var(--height);
             overflow: hidden;
-            opacity: 1;
-            transition: all 0.05s ease-in-out;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
+            border-radius: 8px;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        a:nth-child(n) {
+            animation-delay: calc(0.1s * var(--index, 0));
         }
 
         a img {
@@ -132,11 +138,17 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
             object-fit: cover;
             height: 100%;
             width: 100%;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
         }
 
         a:hover img {
-            transform: scale(1.05);
+            transform: scale(1.08);
+        }
+        
+        a:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
         }
 
         a:focus-visible {
@@ -156,6 +168,17 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         &::after {
             content: " ";
             flex-grow: 1000000000;
+        }
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 </style>

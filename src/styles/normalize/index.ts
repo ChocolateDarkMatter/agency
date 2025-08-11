@@ -16,11 +16,19 @@ export const NormalizeCSS = css`
         font-family: ${Fonts.primary};
         font-weight: 400;
         font-size: 16px;
-        line-height: 1.5;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
     * {
         box-sizing: border-box;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     html {
@@ -104,7 +112,8 @@ export const NormalizeCSS = css`
     h4,
     h5,
     h6 {
-        margin: 0 0 30px;
+        margin: 0 0 1.2em;
+        font-weight: 600;
 
         &:last-child {
             margin: 0;
@@ -166,10 +175,10 @@ export const NormalizeCSS = css`
     }
 
     p {
-        margin: 0 0 10px;
+        margin: 0 0 1.5em;
         font-size: 16px;
-        line-height: 25px;
-        letter-spacing: 1px;
+        line-height: 1.7;
+        letter-spacing: 0.01em;
         color: ${Theme.textSecondary};
 
         &:last-child {
