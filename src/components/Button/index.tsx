@@ -4,11 +4,13 @@ import type { FC } from "react";
 type ButtonProps = {
     children: any;
     link?: string;
-    variant?: "primary" | "secondary";
+    variant?: "primary" | "secondary" | "outline";
     target?: "_blank" | "_self" | "_parent";
     align?: "left" | "center" | "right";
     asButton?: boolean;
     type?: "button" | "submit" | "reset";
+    style?: React.CSSProperties;
+    size?: "default" | "lg";
 };
 
 /**
@@ -25,6 +27,8 @@ export const Button: FC<ButtonProps> = ({
     variant = "primary",
     asButton,
     type,
+    style,
+    size,
     ...rest
 }) => {
     // render button as normal button, otherwise as link
@@ -35,6 +39,7 @@ export const Button: FC<ButtonProps> = ({
             <ButtonComponent
                 href={link}
                 target={target}
+                style={style}
                 {...rest}
                 $variant={variant}
             >

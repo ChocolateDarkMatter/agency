@@ -11,7 +11,7 @@ export const ButtonWrapper = styled.div<{
 `;
 
 export const ButtonLink = styled.a<{
-    $variant: "primary" | "secondary";
+    $variant: "primary" | "secondary" | "outline";
 }>`
     text-transform: uppercase;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -35,6 +35,7 @@ export const ButtonLink = styled.a<{
 
     ${({ $variant }) => $variant === "primary" && PrimaryVariant};
     ${({ $variant }) => $variant === "secondary" && SecondaryVariant};
+    ${({ $variant }) => $variant === "outline" && OutlineVariant};
 `;
 
 export const Button = ButtonLink.withComponent("button");
@@ -72,5 +73,23 @@ const SecondaryVariant = css`
     &:hover {
         background: transparent;
         color: ${Theme.tertiary};
+    }
+`;
+
+const OutlineVariant = css`
+    padding: 12px 40px;
+    min-width: 150px;
+    border: 1.5px solid ${Theme.textDefault};
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    border-radius: 50px;
+    background: transparent;
+    color: ${Theme.textDefault};
+
+    &:hover {
+        background: ${Theme.textDefault};
+        color: ${Theme.primary};
     }
 `;

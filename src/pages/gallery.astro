@@ -1,15 +1,21 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import { Hero } from "@modules/Hero";
 import { Button } from "@components/Button";
 import { Container } from "@components/Container";
 import { FadeIn } from "@utils/animations/FadeIn";
+import { fetchGalleryImages, generateImageUrl, type CloudinaryImage } from "@utils/cloudinary";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  "../../public/images/*.{jpg,jpeg,png,webp}",
-);
+// Fetch images from Cloudinary
+let images: CloudinaryImage[] = [];
+try {
+  images = await fetchGalleryImages();
+} catch (error) {
+  console.error('Failed to fetch gallery images:', error);
+  // Fallback to empty array if Cloudinary fails
+  images = [];
+}
 ---
 
 <Layout
@@ -36,27 +42,43 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         </Container>
 
         <section class="justified-gallery" id="photoswipe">
-            {
-                Object.entries(images).map(async ([_path, image], index) => {
-                    const { default: imageData } = await image();
+            {images.length > 0 ? (
+                images.map((image, index) => {
+                    const thumbnailUrl = generateImageUrl(image.public_id, {
+                        width: 400,
+                        height: 400,
+                        crop: 'fill',
+                        quality: 'auto',
+                        format: 'webp'
+                    });
+                    
+                    const fullSizeUrl = generateImageUrl(image.public_id, {
+                        quality: 'auto',
+                        format: 'webp'
+                    });
+                    
                     return (
                         <a
-                            style={`--width: ${imageData.width}; --height: ${imageData.height}; --index: ${index};`}
-                            href={imageData.src}
+                            style={`--width: ${image.width}; --height: ${image.height}; --index: ${index};`}
+                            href={fullSizeUrl}
                             target="_blank"
                             data-fancybox="gallery"
                         >
-                            <Image
-                                format="webp"
-                                src={imageData}
+                            <img
+                                src={thumbnailUrl}
                                 alt="Event rental showcase"
-                                height={400}
                                 loading={index < 12 ? "eager" : "lazy"}
+                                width="400"
+                                height="400"
                             />
                         </a>
                     );
                 })
-            }
+            ) : (
+                <div class="no-images">
+                    <p>No images found in gallery. Please check your Cloudinary configuration.</p>
+                </div>
+            )}
         </section>
     </main>
 </Layout>
@@ -180,5 +202,15 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
             opacity: 1;
             transform: translateY(0);
         }
+    }
+    
+    .no-images {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 200px;
+        text-align: center;
+        color: var(--text-secondary, #666);
+        font-size: 18px;
     }
 </style>

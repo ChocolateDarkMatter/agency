@@ -20,6 +20,7 @@
     "aos": "^2.3.4",
     "astro": "^4.5.8",
     "axios": "^1.6.8",
+    "cloudinary": "^2.7.0",
     "gsap": "^3.12.5",
     "react-device-detect": "^2.2.3",
     "react-hook-form": "^7.51.3",

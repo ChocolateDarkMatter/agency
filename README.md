@@ -20,19 +20,44 @@ There are 3 folders
 
 ## 🖼️ Gallery Feature
 
-The site includes a complete photo gallery implementation with the following features:
+The site includes a complete photo gallery implementation with Cloudinary integration:
 
 -   **Responsive justified grid layout** - Images automatically arrange in a Pinterest-style justified layout
+-   **Cloudinary integration** - Images are fetched dynamically from Cloudinary cloud storage
 -   **Fancybox lightbox integration** - Click any image to view in fullscreen with smooth transitions
 -   **Navigation elements** - Direct links to Home and Contact pages from gallery
 -   **Mobile-friendly design** - Fully responsive across all device sizes
--   **Performance optimized** - Images load with lazy loading and WebP format conversion
+-   **Performance optimized** - Images load with lazy loading, WebP format, and automatic optimization
 
 ### Gallery Dependencies
 -   `@fancyapps/ui` - Provides lightbox functionality for image viewing
+-   `cloudinary` - Cloud-based image management and delivery
 
-### Gallery Usage
-Visit `/gallery` to view the photo gallery. The gallery automatically displays all images from the `public/images/` directory.
+### Gallery Setup
+
+1. **Create a Cloudinary Account**
+   - Sign up at [cloudinary.com](https://cloudinary.com)
+   - Get your Cloud Name, API Key, and API Secret from the dashboard
+
+2. **Configure Environment Variables**
+   - Copy `.env.example` to `.env` (if exists) or create a new `.env` file
+   - Add your Cloudinary credentials:
+   ```env
+   CLOUDINARY_CLOUD_NAME=your_cloud_name_here
+   CLOUDINARY_API_KEY=your_api_key_here
+   CLOUDINARY_API_SECRET=your_api_secret_here
+   CLOUDINARY_FOLDER=gallery
+   ```
+
+3. **Upload Images to Cloudinary**
+   - Upload your gallery images to Cloudinary
+   - Organize them in a folder (e.g., "gallery") for better management
+
+4. **Gallery Usage**
+   - Visit `/gallery` to view the photo gallery
+   - Images are fetched automatically from your Cloudinary account
+   - Thumbnails are optimized (400x400, WebP format)
+   - Full-size images are shown in lightbox with quality optimization
 
 #### 🖼️ Images
 

@@ -21,6 +21,9 @@ export const Navigation: FC = () => {
                         <a href="/gallery">Gallery</a>
                     </li>
                     <li>
+                        <a href="/guestshots">GuestShots</a>
+                    </li>
+                    <li>
                         <a href="/about">About Us</a>
                     </li>
                     <li>
