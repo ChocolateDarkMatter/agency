@@ -21,7 +21,7 @@ import { MediaQuery } from '../styles/mediaQuery';
 
 const PageContainer = styled.div`
   min-height: 100vh;
-  background: linear-gradient(135deg, #faf5ff 0%, #fdf2f8 50%, #fff7ed 100%);
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 `;
 
 const Section = styled.section<{ background?: string }>`
@@ -42,7 +42,7 @@ const HeroTitle = styled.h1`
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  background: linear-gradient(to right, #2F3561, #488286);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -118,8 +118,11 @@ const FeatureItem = styled.div`
 
 const PricingCard = styled(Card)`
   padding: 2rem;
-  background: linear-gradient(to right, #faf5ff, #fdf2f8);
-  border: 2px solid #c084fc;
+  background: white;
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  border-image-slice: 1;
+  border-radius: 0.5rem;
 `;
 
 const PriceDisplay = styled.div`
@@ -137,10 +140,11 @@ const MockupContainer = styled.div`
 `;
 
 const MockupHeader = styled.div`
-  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
   color: white;
   padding: 1rem;
   border-radius: 0.5rem 0.5rem 0 0;
+  text-align: center;
 `;
 
 const UploadArea = styled.div`
@@ -167,10 +171,11 @@ const ScreenMockup = styled.div`
 `;
 
 const CTASection = styled(Section)`
-  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  background: radial-gradient(circle, #d9e7ff 24%, #ffffff 100%);
   color: white;
   text-align: center;
 `;
+
 
 const GuestShots: React.FC = () => {
   return (
@@ -189,8 +194,14 @@ const GuestShots: React.FC = () => {
               GuestShots lets your guests upload, view, and share moments in real-time using a simple QR code.
             </HeroSubtitle>
             <FlexContainer justify="center">
-              <Button style={{ background: 'linear-gradient(to right, #8b5cf6, #ec4899)' }}>
-                Add to My Event
+              <Button
+                style={{
+                  background: 'linear-gradient(to right, #6b7ba8, #7fa6a9)',
+                  color: 'white',
+                  border: 'none'
+                }}
+              >
+                ADD TO MY BOOKING
               </Button>
               <Button variant="outline">
                 See Demo
@@ -269,7 +280,7 @@ const GuestShots: React.FC = () => {
               </p>
               <MockupContainer>
                 <MockupHeader>
-                  <h4 style={{ fontWeight: '600' }}>Sarah's Wedding</h4>
+                  <h4 style={{ fontWeight: '600', color: '#1B365D' }}>Sarah's Wedding</h4>
                   <p style={{ fontSize: '0.875rem', opacity: 0.9 }}>Share your photos!</p>
                 </MockupHeader>
                 <div style={{ padding: '1rem' }}>
@@ -376,7 +387,7 @@ const GuestShots: React.FC = () => {
       </Section>
 
       {/* Why Hosts Love It */}
-      <Section background="linear-gradient(to right, #faf5ff, #fdf2f8)">
+      <Section background="linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%)">
         <Container>
           <SectionTitle>
             Why Hosts Love GuestShots
@@ -472,8 +483,14 @@ const GuestShots: React.FC = () => {
                     <span>30-day photo storage</span>
                   </FeatureItem>
                 </Grid>
-                <Button style={{ background: 'linear-gradient(to right, #8b5cf6, #ec4899)' }}>
-                  Add to My Booking
+                <Button
+                  style={{
+                    background: 'linear-gradient(to right, #6b7ba8, #7fa6a9)',
+                    color: 'white',
+                    border: 'none'
+                  }}
+                >
+                  ADD TO MY BOOKING
                 </Button>
               </CardContent>
             </PricingCard>
@@ -554,9 +571,16 @@ const GuestShots: React.FC = () => {
       {/* Final CTA */}
       <CTASection>
         <Container maxWidth="64rem">
-          <SectionTitle style={{ color: 'white' }}>
-            Ready to Share the Spotlight?
-          </SectionTitle>
+        <SectionTitle
+          style={{
+            background: 'linear-gradient(to right, #2F3561, #488286)',
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          Ready to Share the Spotlight?
+        </SectionTitle>
           <p style={{ fontSize: '1.25rem', marginBottom: '2rem', opacity: 0.9 }}>
             Transform your event into an interactive photo experience that your guests will never forget.
           </p>
@@ -565,7 +589,7 @@ const GuestShots: React.FC = () => {
               variant="secondary" 
               style={{ 
                 backgroundColor: 'white', 
-                color: '#8b5cf6',
+                color: '#1B365D',
                 border: 'none'
               }}
             >
@@ -575,7 +599,7 @@ const GuestShots: React.FC = () => {
               variant="outline" 
               style={{ 
                 borderColor: 'white', 
-                color: 'white',
+                color: '#1B365D',
                 backgroundColor: 'transparent'
               }}
             >

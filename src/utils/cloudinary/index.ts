@@ -10,14 +10,29 @@ export interface CloudinaryImage {
   created_at: string;
 }
 
+// Configuration with validation
+const cloudName = import.meta.env.CLOUDINARY_CLOUD_NAME;
+const apiKey = import.meta.env.CLOUDINARY_API_KEY;
+const apiSecret = import.meta.env.CLOUDINARY_API_SECRET;
+
+if (!cloudName || !apiKey || !apiSecret) {
+  console.warn('Cloudinary configuration incomplete. Please set CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, and CLOUDINARY_API_SECRET environment variables.');
+}
+
 cloudinary.config({
-  cloud_name: import.meta.env.CLOUDINARY_CLOUD_NAME,
-  api_key: import.meta.env.CLOUDINARY_API_KEY,
-  api_secret: import.meta.env.CLOUDINARY_API_SECRET,
+  cloud_name: cloudName,
+  api_key: apiKey,
+  api_secret: apiSecret,
 });
 
 export const fetchGalleryImages = async (folder?: string): Promise<CloudinaryImage[]> => {
   try {
+    // Check if Cloudinary is properly configured
+    if (!cloudName || !apiKey || !apiSecret) {
+      console.error('Cloudinary configuration incomplete. Cannot fetch images.');
+      return [];
+    }
+
     const searchFolder = folder || import.meta.env.CLOUDINARY_FOLDER || '';
     
     const result = await cloudinary.search
@@ -51,6 +66,11 @@ export const generateImageUrl = (
     format?: string;
   }
 ) => {
+  if (!cloudName) {
+    console.error('CLOUDINARY_CLOUD_NAME not configured. Cannot generate image URL.');
+    return '';
+  }
+
   const transformation = [];
   
   if (transformations?.width) transformation.push(`w_${transformations.width}`);
@@ -61,5 +81,5 @@ export const generateImageUrl = (
   
   const transformString = transformation.length > 0 ? `/${transformation.join(',')}` : '';
   
-  return `https://res.cloudinary.com/${import.meta.env.CLOUDINARY_CLOUD_NAME}/image/upload${transformString}/${publicId}`;
+  return `https://res.cloudinary.com/${cloudName}/image/upload${transformString}/${publicId}`;
 };

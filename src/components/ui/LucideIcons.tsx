@@ -9,10 +9,11 @@ interface IconProps {
 
 export const QrCode: React.FC<IconProps> = ({ className, size = 24, style }) => (
   <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style}>
-    <rect x="3" y="3" width="5" height="5"/>
-    <rect x="3" y="16" width="5" height="5"/>
-    <rect x="16" y="3" width="5" height="5"/>
-    <path d="m5 12 7 7 7-7"/>
+    <rect x="3" y="3" width="5" height="5" />
+    <rect x="16" y="3" width="5" height="5" />
+    <rect x="3" y="16" width="5" height="5" />
+    <rect x="16" y="16" width="5" height="5" />
+    <path d="M10 10h4v4h-4z" />
   </svg>
 );
 

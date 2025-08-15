@@ -114,6 +114,81 @@ export const NavigationList = styled.ul`
             }
         }
     }
+
+    > li.has-submenu {
+        position: relative;
+
+        &:hover .submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: ${Theme.bgElement};
+            border-radius: 8px;
+            padding: 8px 0;
+            margin-top: 5px;
+            min-width: 160px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            list-style: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            ${MediaQuery.max("lg")} {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                box-shadow: none;
+                background: transparent;
+                border: none;
+                padding: 0;
+                margin: 0;
+                min-width: auto;
+            }
+
+            li {
+                margin: 0;
+
+                a {
+                    display: block;
+                    padding: 10px 16px;
+                    color: ${Theme.textDefault};
+                    text-decoration: none;
+                    font-size: 14px;
+                    line-height: 1.4;
+                    border-radius: 4px;
+                    margin: 0 4px;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        background-color: ${Theme.tertiary};
+                        color: ${Theme.primary};
+                        transform: translateX(4px);
+                    }
+
+                    ${MediaQuery.max("lg")} {
+                        padding: 12px 40px;
+                        margin: 2px 0;
+                        transform: none;
+                        
+                        &:hover {
+                            transform: none;
+                            padding-left: 45px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 `;
 
 export const NavigationSocials = styled(Socials)`

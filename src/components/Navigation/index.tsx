@@ -12,16 +12,18 @@ export const Navigation: FC = () => {
                     <li>
                         <a href="/">Home</a>
                     </li>
-                    <li>
+                    <li className="has-submenu">
                         <a href="/offers" className="active">
-                            Our offers
+                            Our offers ▾
                         </a>
+                        <ul className="submenu">
+                            <li>
+                                <a href="/offers/guestshots">GuestShots</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="/gallery">Gallery</a>
-                    </li>
-                    <li>
-                        <a href="/guestshots">GuestShots</a>
                     </li>
                     <li>
                         <a href="/about">About Us</a>
