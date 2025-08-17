@@ -77,6 +77,12 @@ import { Contact } from "@modules/Contact";
                 },
             }}
         />
-        <Contact client:load />
+        <Contact 
+            client:load 
+            context="offers"
+            title="Ready to Make Your Event Extraordinary?"
+            description="Get a personalized quote for your Houston event. Tell us about your vision and we'll create the perfect rental package for you."
+            showExtraFields={true}
+        />
     </main>
 </Layout>

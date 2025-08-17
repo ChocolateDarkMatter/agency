@@ -11,6 +11,8 @@ type ButtonProps = {
     type?: "button" | "submit" | "reset";
     style?: React.CSSProperties;
     size?: "default" | "lg";
+    disabled?: boolean;
+    onClick?: () => void;
 };
 
 /**

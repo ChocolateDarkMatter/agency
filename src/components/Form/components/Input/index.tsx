@@ -3,9 +3,12 @@ import * as S from "./styled";
 
 type InputProps = {
     placeholder: string;
-    type: "text" | "email" | "textarea";
+    type: "text" | "email" | "textarea" | "date";
     register: any;
     error?: any;
+    disabled?: boolean;
+    tabIndex?: number;
+    autoComplete?: string;
 };
 export const Input: FC<InputProps> = ({
     placeholder,
